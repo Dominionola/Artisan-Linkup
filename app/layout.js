@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,6 +39,7 @@ export default function RootLayout({ children }) {
 
         {/* Main content for page-specific components */}
         <main className="flex-grow">{children}</main>
+        <ToastContainer />
         <Footer />
       </body>
     </html>
