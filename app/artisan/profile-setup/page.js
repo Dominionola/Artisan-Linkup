@@ -1,9 +1,21 @@
+"use client";
 import ProfilePictureUpload from "@/app/components/UploadPFP";
 
 export default function ArtisanSetup() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const state = form.state.value;
+    if (!state || state === "") {
+      alert("Please select your state.");
+      return;
+    }
+    // ...handle other form logic here
+    form.submit();
+  };
   return (
     <div className="mt-20 container mx-auto max-w-5xl p-6 bg-amber-50 rounded-lg shadow">
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Profile Picture Upload */}
         <ProfilePictureUpload />
 
@@ -29,9 +41,10 @@ export default function ArtisanSetup() {
           <h3 className="text-lg font-semibold text-gray-800">State</h3>
           <select
             name="state"
+            required
             className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
           >
-            <option value="" disabled>Select your state</option>
+            <option value="">Select your state</option>
             <option value="abia">Abia</option>
             <option value="adamawa">Adamawa</option>
             <option value="akwa-ibom">Akwa Ibom</option>
@@ -72,26 +85,37 @@ export default function ArtisanSetup() {
           </select>
         </div>
 
-        {/* Location */}
+        {/* City */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800">Location</h3>
+          <h3 className="text-lg font-semibold text-gray-800">City</h3>
           <input
             type="text"
-            name="location"
+            name="city"
             placeholder="E.g., Ikeja, Lagos"
             className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
 
-        {/* Pricing */}
+        {/* Address */}
+        <div>
+          <h3 className="text-lg font-semibold text-gray-800">Address</h3>
+          <input
+            type="text"
+            name="address"
+            placeholder="E.g., 123 Main St"
+            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
+        {/* Service Category */}
         <div>
           <h3 className="text-lg font-semibold text-gray-800">
-            Price Range (₦)
+            Service Category
           </h3>
           <input
             type="text"
-            name="pricing"
-            placeholder="E.g., ₦5,000 - ₦15,000"
+            name="serviceCategory"
+            placeholder="E.g., Plumbing"
             className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
         </div>
