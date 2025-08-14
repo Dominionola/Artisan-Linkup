@@ -8,16 +8,19 @@ export default function LoginForm() {
       <form className="flex flex-col gap-4 w-full md:w-[85%] max-w-sm">
         <input
           type="email"
+          name="email"
           placeholder="Email"
           className="border p-2 rounded-md w-full"
         />
         <input
           type="password"
+          name="password"
           placeholder="Password"
           className="border p-2 rounded-md w-full"
         />
         <button
           type="submit"
+          name="login"
           className="bg-primary text-white p-2 rounded-md w-full cursor-pointer"
         >
           Login

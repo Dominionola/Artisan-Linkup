@@ -18,17 +18,6 @@ export default async function SignUp({ searchParams }) {
           Sign up to Hire Artisans
         </h1>
 
-        {/* ✅ Feedback Message */}
-        {success && (
-          <p className="text-green-600 font-medium">
-            Account created successfully!
-          </p>
-        )}
-        {error && (
-          <p className="text-red-600 font-medium">
-            {decodeURIComponent(error)}
-          </p>
-        )}
 
         <form action={createUser} className="flex flex-col gap-4 w-[100%]">
           <div className="flex flex-col items-center w-full">
