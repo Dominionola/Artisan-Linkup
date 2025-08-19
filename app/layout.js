@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} antialiased flex flex-col min-h-screen`}
       >
         <ConditionalNavbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-16">{children}</main>
         <ToastContainer />
         <Footer />
       </body>

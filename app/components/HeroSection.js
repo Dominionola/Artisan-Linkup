@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="relative h-[80vh] md:h-150 w-full bg-[url('/hero-img.png')] bg-no-repeat bg-cover bg-center mt-16">
+    <div className="relative h-[80vh] md:h-150 w-full bg-[url('/hero-img.png')] bg-no-repeat bg-cover bg-center">
       {/* Overlay */}
       <div className="absolute inset-0 opacity-50"></div>
 
@@ -30,9 +30,15 @@ export default function HeroSection() {
 
           <div className="flex items-center justify-center md:justify-start mt-6 gap-2 md:gap-6 text-sm font-semibold text-gray-300 hover:text-white cursor-pointer">
             <p>View More</p>{" "}
-               <Image src="/Arrow.png" alt="" width={28} height={28} className="w-5 md:w-7" />
+            <Image
+              src="/Arrow.png"
+              alt=""
+              width={28}
+              height={28}
+              className="w-5 md:w-7"
+            />
             <Link
-              href="/auth/option"
+              href="/auth/login"
               className="bg-primary py-2 px-4 md:px-7 md:py-1 rounded hover:opacity-80"
             >
               Log in

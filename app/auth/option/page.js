@@ -14,13 +14,13 @@ export default function Signupas() {
 
         <Link
           className="bg-primary text-black text-lg p-2 w-full text-center rounded-4xl hover:opacity-90 transition"
-          href="/auth/artisan"
+          href="/auth/artisan/signup"
         >
           I am an Artisan
         </Link>
         <Link
           className="bg-primary text-black text-lg  p-2 w-full text-center rounded-4xl hover:opacity-90 transition"
-          href="/auth/customer"
+          href="/auth/customer/signup"
         >
           I am a Customer
         </Link>

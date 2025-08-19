@@ -13,13 +13,13 @@ export function Redirector() {
     // Show a toast notification right before redirecting
     toast.info("Redirecting...", {
       autoClose: 1000, // Closes automatically after 1 second
-      hideProgressBar: true
+      hideProgressBar: true,
     });
 
     // We use a small delay to make sure the toast is visible
     const timer = setTimeout(() => {
       if (role === "customer") {
-        window.location.href = "/customer/dashboard";
+        window.location.href = "/customer/profile-setup";
       }
 
       if (role === "artisan") {
@@ -32,7 +32,6 @@ export function Redirector() {
     }, 1200); // Redirect after 1.2 seconds
 
     return () => clearTimeout(timer); // Clean up the timer
-    
   }, [role]);
 
   return <div>Redirecting...</div>;
