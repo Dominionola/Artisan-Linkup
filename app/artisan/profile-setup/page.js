@@ -13,7 +13,7 @@ export default function ProfileSetupPage() {
     const data = Object.fromEntries(formData.entries());
     console.log(data); // Logs all form fields as an object
     localStorage.setItem("jobFormData", JSON.stringify(data));
-    router.push(`/artisan/profile-setup/job-description`);
+    router.push(`/artisan/profile-setup/service-description`);
   };
 
   return (
@@ -33,10 +33,10 @@ export default function ProfileSetupPage() {
           </div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4">
-              <label htmlFor="location" className="block text-sm font-medium">
-                Location
+              <label htmlFor="state" className="block text-sm font-medium">
+                State
               </label>
-              <StateSelect id="location" name="location" />
+              <StateSelect id="state" name="state" />
               <label
                 htmlFor="job-preference"
                 className="block text-sm font-medium"

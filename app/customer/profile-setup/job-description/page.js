@@ -1,6 +1,5 @@
 "use client";
-import StateSelect from "@/app/components/StateSelect";
-import JobPreferencesSelect from "@/app/components/JobPreferencesSelect";
+
 import TestimonialCard from "@/app/components/TestimonialCard";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +16,7 @@ export default function JobDescriptionPage() {
 
     console.log(updatedData);
     localStorage.setItem("jobFormData", JSON.stringify(updatedData));
-    router.push(`/artisan/profile-setup/job-description-cont`);
+    router.push(`/customer/profile-setup/job-description/job-description-cont`);
   };
 
   return (
@@ -31,37 +30,27 @@ export default function JobDescriptionPage() {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4">
               <label htmlFor="job-title" className="block text-sm font-medium">
-                Date
+                Job Title
               </label>
               <input
-                type="date"
+                type="text"
                 id="job-title"
                 name="job-title"
                 placeholder="e.g Plumber"
                 className="border border-gray-300 rounded-lg p-2 placeholder-gray-400"
                 required
               />
-
-              <label htmlFor="landmark" className="block text-sm font-medium">
-                Landmark
+              <label
+                htmlFor="job-preference"
+                className="block text-sm font-medium"
+              >
+                Job Detail
               </label>
-              <input
-                type="text"
-                id="landmark"
-                name="landmark"
-                placeholder=""
-                className="border border-gray-300 rounded-lg p-2 placeholder-gray-400"
-                required
-              />
-
-             <label htmlFor="budget" className="block text-sm font-medium">
-                Budget
-              </label>
-              <input
-                type="number"
-                id="budget"
-                name="budget"
-                placeholder=""
+              <textarea
+                id="job-detail"
+                name="job-detail"
+                placeholder="e.g. Give details of what kind of issue you want to be fixed
+"
                 className="border border-gray-300 rounded-lg p-2 placeholder-gray-400"
                 required
               />
