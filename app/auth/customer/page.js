@@ -14,7 +14,7 @@ export default function Customer() {
 
         <Link
           className="bg-primary text-black text-lg p-2 w-full text-center rounded-4xl hover:opacity-90 transition"
-          href="/auth/artisan/login"
+          href="/auth/customer/login"
         >
           Log In
         </Link>

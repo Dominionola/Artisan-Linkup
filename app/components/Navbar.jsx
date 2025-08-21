@@ -59,7 +59,7 @@ export default function Navbar() {
         </div>
 
         <div className="text-sm gap-4 items-center hidden lg:flex">
-          <Link href="/auth/option" className="hover:text-primary">
+          <Link href="/auth/login" className="hover:text-primary">
             Log in
           </Link>
           <Link
@@ -104,7 +104,7 @@ export default function Navbar() {
           <Link href="/auth/option">Sign up</Link>
         </li>
         <li>
-          <Link href="/auth/option">Log in</Link>
+          <Link href="/auth/login">Log in</Link>
         </li>
         <li>
           <Link href="/about">About Us</Link>

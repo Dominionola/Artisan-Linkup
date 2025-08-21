@@ -1,19 +1,22 @@
 "use client";
-import StateSelect from "@/app/components/StateSelect";
-import JobPreferencesSelect from "@/app/components/JobPreferencesSelect";
+
 import TestimonialCard from "@/app/components/TestimonialCard";
 import { useRouter } from "next/navigation";
 
-export default function ProfileSetupPage() {
+export default function JobDescriptionPage() {
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-    console.log(data); // Logs all form fields as an object
-    localStorage.setItem("jobFormData", JSON.stringify(data));
-    router.push(`/artisan/profile-setup/service-description`);
+
+    const existingData = JSON.parse(localStorage.getItem("jobFormData")) || {};
+    const updatedData = { ...existingData, ...data };
+
+    console.log(updatedData);
+    localStorage.setItem("jobFormData", JSON.stringify(updatedData));
+    router.push(`/customer/profile-setup/job-description/job-description-cont`);
   };
 
   return (
@@ -22,28 +25,35 @@ export default function ProfileSetupPage() {
 
       <div className="flex-1 flex items-center justify-center px-4">
         <div className="w-full flex flex-col gap-6 max-w-lg ">
-          <h3 className="text-lg font-semibold">Filter</h3>
-          <div className="flex gap-4">
-            <h4 className="text-sm font-medium border px-4 py-2 rounded-lg">
-              Request a Job
-            </h4>
-            <h4 className="text-sm font-medium border px-4 py-2 rounded-lg">
-              Job Categories
-            </h4>
-          </div>
+          <h3 className="text-lg font-semibold">Job Description</h3>
+
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4">
-              <label htmlFor="state" className="block text-sm font-medium">
-                State
+              <label htmlFor="job-title" className="block text-sm font-medium">
+                Job Title
               </label>
-              <StateSelect id="state" name="state" />
+              <input
+                type="text"
+                id="job-title"
+                name="job-title"
+                placeholder="e.g Plumber"
+                className="border border-gray-300 rounded-lg p-2 placeholder-gray-400"
+                required
+              />
               <label
                 htmlFor="job-preference"
                 className="block text-sm font-medium"
               >
-                Job Preference
+                Job Detail
               </label>
-              <JobPreferencesSelect id="job-preference" name="job-preference" />
+              <textarea
+                id="job-detail"
+                name="job-detail"
+                placeholder="e.g. Give details of what kind of issue you want to be fixed
+"
+                className="border border-gray-300 rounded-lg p-2 placeholder-gray-400"
+                required
+              />
             </div>
             <div className="pt-4">
               <button

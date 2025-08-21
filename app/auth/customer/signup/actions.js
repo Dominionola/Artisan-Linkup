@@ -11,10 +11,10 @@ const signUpSchema = z.object({
     .min(8, { message: "Password must be at least 8 characters long." }),
 });
 
-export async function signInWithGoogle() {
-  await signIn("google", { redirectTo: "/portal" });
+export async function signInWithGoogle(role) {
+  const callbackUrl = role ? `/portal?role=${role}` : "/portal";
+  await signIn("google", { callbackUrl });
 }
-
 export async function signOutWithGoogle(params) {
   await signOut();
 }
