@@ -3,7 +3,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       <div className="relative h-[70vh] md:h-150 w-full bg-[url('/assets/about-hero.png')] bg-no-repeat bg-cover bg-center md:bg-top p-6 flex items-end">
-        <h1 className=" text-white text-3xl md:text-5xl font-bold ">
+        <h1 className=" text-white text-3xl md:text-5xl font-bold max-w-5xl ">
           Contact Us
         </h1>
       </div>
