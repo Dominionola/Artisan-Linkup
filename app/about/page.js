@@ -2,7 +2,7 @@ import NewsLetter from "../components/NewsLetter";
 export default function AboutPage() {
   return (
     <div className="flex flex-col">
-      <div className="relative h-[70vh] md:h-150 w-full bg-[url('/assets/about-hero.png')] bg-no-repeat bg-cover bg-center md:bg-top mt-20 p-6 flex items-end">
+      <div className="relative h-[70vh] md:h-150 w-full bg-[url('/assets/about-hero.png')] bg-no-repeat bg-cover bg-center md:bg-top p-6 flex items-end">
         <h1 className=" text-white text-3xl md:text-5xl font-bold ">
           Contact Us
         </h1>
