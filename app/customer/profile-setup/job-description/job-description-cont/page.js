@@ -17,7 +17,7 @@ export default function JobDescriptionPage() {
 
     console.log(updatedData);
     localStorage.setItem("jobFormData", JSON.stringify(updatedData));
-    router.push(`/customer/profile-setup/job-description-cont`);
+    router.push(`/customer/profile-setup/job-description/job-description-cont/success`);
   };
 
   return (
